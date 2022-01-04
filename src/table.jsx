@@ -15,7 +15,11 @@ const Table = () => {
     
 
     const handleAddFormSubmit = (event) => {
-        fetch('/table?page=10000', {method:'POST'}).then(x => x.json()).then(x => console.log(x))
+        fetch('/table?' + new URLSearchParams({
+            purp: `${purpose}`,
+            amt: amount,
+        })).then(x => x.json()).then(x => console.log(x));
+        
         event.preventDefault();
 
         const newExpense = {
