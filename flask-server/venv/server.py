@@ -8,8 +8,8 @@ def table():
     x = request.args.get('amt')
     y = request.args.get('purp')
     resp = {
-        "purp": y,
-        "amt": x
+        "purpose": y,
+        "amount": x
     }
     return json.dumps(resp)
 
